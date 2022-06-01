@@ -24,10 +24,3 @@ class AcGameMenu {
         this.$settings = this.$menu.find('.ac-game-menu-field-item-settings');
     }
 }
-class AcGame {
-    constructor(id) {
-        this.id = id;
-        this.$ac_game = $('#' + id);
-        this.menu = new AcGameMenu(this);
-    }
-}
