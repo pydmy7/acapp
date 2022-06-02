@@ -32,5 +32,40 @@ class AcGameMenu {
         this.$settings = this.$menu.find('.ac-game-menu-field-item-settings');
         this.$SIASOJ = this.$menu.find('.ac-game-menu-field-item-SIASOJ');
         this.$announcement = this.$menu.find('.ac-game-menu-field-item-announcement');
+
+        this.start();
+    }
+
+    start() {
+        this.add_listening_events();
+    }
+
+    add_listening_events() {
+        let outer = this;
+        this.$single_mode.click(function(){
+            console.log("click signle mode");
+            outer.hide();
+            outer.root.playground.show();
+        });
+        this.$multi_mode.click(function(){
+            console.log("click multi mode");
+        });
+        this.$settings.click(function(){
+            console.log("click settings");
+        });
+        this.$SIASOJ.click(function(){
+            console.log("click SIASOJ");
+        });
+        this.$announcement.click(function(){
+            console.log("click announcement");
+        });
+    }
+
+    show() {  // show_menu_interface
+        this.$menu.show();
+    }
+
+    hide() {  // hide_menu_interface
+        this.$menu.hide();
     }
 }
