@@ -5,6 +5,7 @@ class AcGame {
         this.menu = new AcGameMenu(this);
         this.playground = new AcGamePlayground(this);
         this.siasoj = new AcGameSiasoj(this);
+        this.announcement = new AcGameAnnouncement(this);
 
         this.start();
     }

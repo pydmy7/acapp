@@ -60,6 +60,8 @@ class AcGameMenu {
         });
         this.$announcement.click(function(){
             console.log("click announcement");
+            outer.hide();
+            outer.root.announcement.show();
         });
     }
 
