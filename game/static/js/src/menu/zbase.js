@@ -15,6 +15,14 @@ class AcGameMenu {
         <div class="ac-game-menu-field-item ac-game-menu-field-item-settings">
             settings
         </div>
+        <br>
+        <div class="ac-game-menu-field-item ac-game-menu-field-item-SIASOJ">
+            SIASOJ
+        </div>
+        <br>
+        <div class="ac-game-menu-field-item ac-game-menu-field-item-announcement">
+            announcement
+        </div>
     </div>
 </div>
 `);
@@ -22,5 +30,7 @@ class AcGameMenu {
         this.$single_mode = this.$menu.find('.ac-game-menu-field-item-single-mode');
         this.$multi_mode = this.$menu.find('.ac-game-menu-field-item-multi-mode');
         this.$settings = this.$menu.find('.ac-game-menu-field-item-settings');
+        this.$SIASOJ = this.$menu.find('.ac-game-menu-field-item-SIASOJ');
+        this.$announcement = this.$menu.find('.ac-game-menu-field-item-announcement');
     }
 }

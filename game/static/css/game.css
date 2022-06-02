@@ -16,11 +16,11 @@
 .ac-game-menu-field-item {
     color: white;
     height: 6vh;
-    width: 18vw;
+    width: 23vw;
     font-size: 4vh;
     font-style: italic;
     text-align: center;
-    background-color: rgba(39,21,28, 0.6);
+    background-color: rgba(39, 21, 28, 0.6);
     border-radius: 50px;
     letter-spacing: 0.5vw;
     cursor: pointer;
