@@ -16,8 +16,8 @@ class AcGameMenu {
             settings
         </div>
         <br>
-        <div class="ac-game-menu-field-item ac-game-menu-field-item-SIASOJ">
-            SIASOJ
+        <div class="ac-game-menu-field-item ac-game-menu-field-item-siasoj">
+            siasoj
         </div>
         <br>
         <div class="ac-game-menu-field-item ac-game-menu-field-item-announcement">
@@ -30,7 +30,7 @@ class AcGameMenu {
         this.$single_mode = this.$menu.find('.ac-game-menu-field-item-single-mode');
         this.$multi_mode = this.$menu.find('.ac-game-menu-field-item-multi-mode');
         this.$settings = this.$menu.find('.ac-game-menu-field-item-settings');
-        this.$SIASOJ = this.$menu.find('.ac-game-menu-field-item-SIASOJ');
+        this.$siasoj = this.$menu.find('.ac-game-menu-field-item-siasoj');
         this.$announcement = this.$menu.find('.ac-game-menu-field-item-announcement');
 
         this.start();
@@ -53,8 +53,10 @@ class AcGameMenu {
         this.$settings.click(function(){
             console.log("click settings");
         });
-        this.$SIASOJ.click(function(){
-            console.log("click SIASOJ");
+        this.$siasoj.click(function(){
+            console.log("click siasoj");
+            outer.hide();
+            outer.root.siasoj.show();
         });
         this.$announcement.click(function(){
             console.log("click announcement");
@@ -91,12 +93,35 @@ class AcGamePlayground {
         this.$playground.hide();
     }
 }
+class AcGameSiasoj {
+    constructor(root) {
+        this.root = root;
+        this.$siasoj = $(`<div>siasoj_dev</div>`);
+
+        this.hide();
+        this.root.$ac_game.append(this.$siasoj);
+
+        this.start();
+    }
+
+    start() {
+    }
+
+    show() {  // show sias interface
+        this.$siasoj.show();
+    }
+
+    hide() {  // hide sias interface
+        this.$siasoj.hide();
+    }
+}
 class AcGame {
     constructor(id) {
         this.id = id;
         this.$ac_game = $('#' + id);
         this.menu = new AcGameMenu(this);
         this.playground = new AcGamePlayground(this);
+        this.siasoj = new AcGameSiasoj(this);
 
         this.start();
     }
