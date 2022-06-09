@@ -1,7 +1,7 @@
 class AcGameSiasoj {
     constructor(root) {
         this.root = root;
-        this.$siasoj = $(`<div>SIASOJ-dev</div>`);
+        this.$siasoj = $(`<div> siasoj_dev </div>`);
 
         this.hide();
         this.root.$ac_game.append(this.$siasoj);
