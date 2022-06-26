@@ -16,7 +16,7 @@ def register(request):
         })
     if password != password_confirm:
         return JsonResponse({
-            'result': "两个密码不一致",
+            'result': "两个密码不一致"
         })
     if User.objects.filter(username=username).exists():
         return JsonResponse({
@@ -25,8 +25,8 @@ def register(request):
     user = User(username=username)
     user.set_password(password)
     user.save()
-    Player.objects.create(user=user, photo="https://img2.baidu.com/it/u=2161949891,656888789&fm=26&fmt=auto")
+    Player.objects.create(user=user, photo="https://cdn.acwing.com/media/user/profile/photo/69467_lg_45b90958f4.jpg")
     login(request, user)
     return JsonResponse({
-        'result': "success",
+        'result': "success"
     })
