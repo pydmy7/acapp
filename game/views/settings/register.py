@@ -18,14 +18,14 @@ def register(request):
         return JsonResponse({
             'result': "两个密码不一致"
         })
-    if User.objects.filter(username=username).exists():
+    if User.objects.filter(username = username).exists():
         return JsonResponse({
             'result': "用户名已存在"
         })
-    user = User(username=username)
+    user = User(username = username)
     user.set_password(password)
     user.save()
-    Player.objects.create(user=user, photo="https://cdn.acwing.com/media/user/profile/photo/69467_lg_45b90958f4.jpg")
+    Player.objects.create(user = user, photo = "https://cdn.acwing.com/media/article/image/2022/06/21/1_3b60241ef1-photo.png")
     login(request, user)
     return JsonResponse({
         'result': "success"
