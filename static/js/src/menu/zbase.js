@@ -44,24 +44,21 @@ class AcGameMenu {
     add_listening_events() {
         let outer = this;
         this.$single_mode.click(function(){
-            console.log("click signle mode");
             outer.hide();
-            outer.root.playground.show();
+            outer.root.playground.show("single mode");
         });
         this.$multi_mode.click(function(){
-            console.log("click multi mode");
+            outer.hide();
+            outer.root.playground.show("multi mode");
         });
         this.$settings.click(function(){
-            console.log("click settings");
             outer.root.settings.logout_on_remote();
         });
         this.$siasoj.click(function(){
-            console.log("click siasoj");
             outer.hide();
             outer.root.siasoj.show();
         });
         this.$announcement.click(function(){
-            console.log("click announcement");
             outer.hide();
             outer.root.announcement.show();
         });
