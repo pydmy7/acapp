@@ -2,27 +2,32 @@ class AcGameMenu {
     constructor(root) {
         this.root = root;
         this.$menu = $(`
-<div class="ac-game-menu">
-    <div class="ac-game-menu-field">
-        <div class="ac-game-menu-field-item ac-game-menu-field-item-single-mode">
+<div class = "ac-game-menu">
+    <div class = "ac-game-menu-field">
+        <div class = "ac-game-menu-field-item ac-game-menu-field-item-single-mode">
             单人模式
         </div>
+        <img class = "ac-game-menu-op-img ac-game-menu-op-img-single" src = "https://app2479.acapp.acwing.com.cn/static/image/menu/single.png">
         <br>
-        <div class="ac-game-menu-field-item ac-game-menu-field-item-multi-mode">
+        <div class = "ac-game-menu-field-item ac-game-menu-field-item-multi-mode">
             多人模式
         </div>
+        <img class = "ac-game-menu-op-img ac-game-menu-op-img-multi" src = "https://app2479.acapp.acwing.com.cn/static/image/menu/multi.png">
         <br>
-        <div class="ac-game-menu-field-item ac-game-menu-field-item-settings">
+        <div class = "ac-game-menu-field-item ac-game-menu-field-item-settings">
             退出
         </div>
+        <img class = "ac-game-menu-op-img ac-game-menu-op-img-settings" src = "https://app2479.acapp.acwing.com.cn/static/image/menu/settings.png">
         <br>
-        <div class="ac-game-menu-field-item ac-game-menu-field-item-siasoj">
+        <div class = "ac-game-menu-field-item ac-game-menu-field-item-siasoj">
             siasoj
         </div>
+        <img class = "ac-game-menu-op-img ac-game-menu-op-img-siasoj" src = "https://app2479.acapp.acwing.com.cn/static/image/menu/jiaran.png">
         <br>
-        <div class="ac-game-menu-field-item ac-game-menu-field-item-announcement">
+        <div class = "ac-game-menu-field-item ac-game-menu-field-item-announcement">
             announcement
         </div>
+        <img class = "ac-game-menu-op-img ac-game-menu-op-img-announcement" src = "https://app2479.acapp.acwing.com.cn/static/image/menu/xiangwan.png">
     </div>
 </div>
 `);

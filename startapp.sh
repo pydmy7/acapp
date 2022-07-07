@@ -1,8 +1,8 @@
 #! /bin/bash
 
-echo "启动 nginx 服务"
+echo "重启 nginx 服务"
 sudo /etc/init.d/nginx -s reload
-sudo /etc/init.d/nginx start
+sudo /etc/init.d/nginx restart
 
 echo "启动 redis 服务"
 sudo redis-server /etc/redis/redis.conf

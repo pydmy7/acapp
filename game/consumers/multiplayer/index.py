@@ -17,7 +17,7 @@ class MultiPlayer(AsyncWebsocketConsumer):
 
         start = 0
 
-        for i in range(start, 100000000):
+        for i in range(start, 10007):
             name = "room-%d" % (i)
             if not cache.has_key(name) or len(cache.get(name)) < settings.ROOM_CAPACITY:
                 self.room_name = name
