@@ -19,10 +19,10 @@ class AcGameMenu {
         </div>
         <img class = "ac-game-menu-op-img ac-game-menu-op-img-settings" src = "https://app2479.acapp.acwing.com.cn/static/image/menu/settings.png">
         <br>
-        <div class = "ac-game-menu-field-item ac-game-menu-field-item-siasoj">
-            siasoj
+        <div class = "ac-game-menu-field-item ac-game-menu-field-item-description">
+            游戏说明
         </div>
-        <img class = "ac-game-menu-op-img ac-game-menu-op-img-siasoj" src = "https://app2479.acapp.acwing.com.cn/static/image/menu/jiaran.png">
+        <img class = "ac-game-menu-op-img ac-game-menu-op-img-description" src = "https://app2479.acapp.acwing.com.cn/static/image/menu/jiaran.png">
         <br>
         <div class = "ac-game-menu-field-item ac-game-menu-field-item-announcement">
             announcement
@@ -36,7 +36,7 @@ class AcGameMenu {
         this.$single_mode = this.$menu.find('.ac-game-menu-field-item-single-mode');
         this.$multi_mode = this.$menu.find('.ac-game-menu-field-item-multi-mode');
         this.$settings = this.$menu.find('.ac-game-menu-field-item-settings');
-        this.$siasoj = this.$menu.find('.ac-game-menu-field-item-siasoj');
+        this.$description = this.$menu.find('.ac-game-menu-field-item-description');
         this.$announcement = this.$menu.find('.ac-game-menu-field-item-announcement');
 
         this.start();
@@ -59,9 +59,9 @@ class AcGameMenu {
         this.$settings.click(function(){
             outer.root.settings.logout_on_remote();
         });
-        this.$siasoj.click(function(){
+        this.$description.click(function(){
             outer.hide();
-            outer.root.siasoj.show();
+            outer.root.description.show();
         });
         this.$announcement.click(function(){
             outer.hide();

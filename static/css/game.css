@@ -9,7 +9,6 @@
 /* love */
 
 /* settings */
-
 .ac-game-settings {
     width: 100%;
     height: 100%;
@@ -145,11 +144,9 @@
     border-radius: 10px;
     padding: 50px 50px;
 }
-
 /* settings */
 
 /* menu */
-
 .ac-game-menu {
     width: 100%;
     height: 100%;
@@ -202,7 +199,7 @@
     top: 46%;
 }
 
-.ac-game-menu-op-img-siasoj {
+.ac-game-menu-op-img-description {
     top: 66%;
 }
 
@@ -225,7 +222,7 @@
     transition: 300ms;
 }
 
-.ac-game-menu-field-item-siasoj:hover+.ac-game-menu-op-img-siasoj {
+.ac-game-menu-field-item-description:hover+.ac-game-menu-op-img-description {
     transform: scale(1.5);
     transition: 300ms;
 }
@@ -234,9 +231,9 @@
     transform: scale(1.5);
     transition: 300ms;
 }
-
 /* menu */
 
+/* playground */
 .ac-game-playground {
     width: 100%;
     height: 100%;
@@ -250,3 +247,28 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+/* playground */
+
+/* description */
+.ac-game-description {
+    text-align: center;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    background-size: 100% 100%;
+    background-color: rgba(40, 40, 40);
+    color: white;
+    padding-top: 27vh;
+}
+
+.ac-game-description-title {
+    margin-bottom: 1vh;
+    font-size: 3.5vh;
+}
+
+.ac-game-description-content {
+    margin: 2vh 10vh;
+    font-size: 2.5vh;
+}
+/* description */

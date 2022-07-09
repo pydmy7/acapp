@@ -20,6 +20,42 @@ class AcGameAnnouncement {
         this.$announcement.hide();
     }
 }
+class AcGameDescription {
+    constructor(root) {
+        this.root = root;
+        this.$description = $(`
+<div class = "ac-game-description">
+    <div class = "ac-game-description-title">
+        操作说明
+    </div>
+    <div class = "ac-game-description-content">
+        <p>鼠标右键：移动</p>
+        <p>鼠标左键：朝目标方向使用技能</p>
+        <p>Q: 发射火球</p>
+        <p>F：闪现</p>
+        <p>Enter：打开聊天框</p>
+        <p>ECS：关闭聊天框</p>
+    </div>
+</div>
+`);
+
+        this.hide();
+        this.root.$ac_game.append(this.$description);
+
+        this.start();
+    }
+
+    start() {
+    }
+
+    show() {  // show description interface
+        this.$description.show();
+    }
+
+    hide() {  // hide description interface
+        this.$description.hide();
+    }
+}
 class AcGameMenu {
     constructor(root) {
         this.root = root;
@@ -41,10 +77,10 @@ class AcGameMenu {
         </div>
         <img class = "ac-game-menu-op-img ac-game-menu-op-img-settings" src = "https://app2479.acapp.acwing.com.cn/static/image/menu/settings.png">
         <br>
-        <div class = "ac-game-menu-field-item ac-game-menu-field-item-siasoj">
-            siasoj
+        <div class = "ac-game-menu-field-item ac-game-menu-field-item-description">
+            游戏说明
         </div>
-        <img class = "ac-game-menu-op-img ac-game-menu-op-img-siasoj" src = "https://app2479.acapp.acwing.com.cn/static/image/menu/jiaran.png">
+        <img class = "ac-game-menu-op-img ac-game-menu-op-img-description" src = "https://app2479.acapp.acwing.com.cn/static/image/menu/jiaran.png">
         <br>
         <div class = "ac-game-menu-field-item ac-game-menu-field-item-announcement">
             announcement
@@ -58,7 +94,7 @@ class AcGameMenu {
         this.$single_mode = this.$menu.find('.ac-game-menu-field-item-single-mode');
         this.$multi_mode = this.$menu.find('.ac-game-menu-field-item-multi-mode');
         this.$settings = this.$menu.find('.ac-game-menu-field-item-settings');
-        this.$siasoj = this.$menu.find('.ac-game-menu-field-item-siasoj');
+        this.$description = this.$menu.find('.ac-game-menu-field-item-description');
         this.$announcement = this.$menu.find('.ac-game-menu-field-item-announcement');
 
         this.start();
@@ -81,9 +117,9 @@ class AcGameMenu {
         this.$settings.click(function(){
             outer.root.settings.logout_on_remote();
         });
-        this.$siasoj.click(function(){
+        this.$description.click(function(){
             outer.hide();
-            outer.root.siasoj.show();
+            outer.root.description.show();
         });
         this.$announcement.click(function(){
             outer.hide();
@@ -1197,39 +1233,17 @@ class Settings {
         this.$settings.show();
     }
 }
-class AcGameSiasoj {
-    constructor(root) {
-        this.root = root;
-        this.$siasoj = $(`<div> siasoj_dev </div>`);
-
-        this.hide();
-        this.root.$ac_game.append(this.$siasoj);
-
-        this.start();
-    }
-
-    start() {
-    }
-
-    show() {  // show sias interface
-        this.$siasoj.show();
-    }
-
-    hide() {  // hide sias interface
-        this.$siasoj.hide();
-    }
-}
 export class AcGame {
     constructor(id, AcWingOS) {
         this.id = id;
         this.$ac_game = $('#' + id);
         this.AcWingOS = AcWingOS;
 
-        this.settings = new Settings(this);  // settings 要在 menu 之前被 new 出来
-        this.menu = new AcGameMenu(this);  // 因为后面 menu 会调用 settings 里面的东西
-        this.siasoj = new AcGameSiasoj(this);
+        this.settings = new Settings(this);
+        this.menu = new AcGameMenu(this);
+        this.playground = new AcGamePlayground(this);
+        this.description = new AcGameDescription(this);
         this.announcement = new AcGameAnnouncement(this);
-        this.playground = new AcGamePlayground(this);  // 把所有的准备工作做完，开始渲染主页面
 
         this.start();
     }
