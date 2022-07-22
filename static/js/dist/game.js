@@ -31,7 +31,7 @@ class AcGameDescription {
     <div class = "ac-game-description-content">
         <p>鼠标右键：移动</p>
         <p>鼠标左键：朝目标方向使用技能</p>
-        <p>Q: 发射火球</p>
+        <p>Q：发射火球</p>
         <p>F：闪现</p>
         <p>Enter：打开聊天框</p>
         <p>ECS：关闭聊天框</p>
@@ -199,7 +199,7 @@ class GameMap extends AcGameObject {
     constructor(playground) {
         super();
         this.playground = playground;
-        this.$canvas = $(`<canvas></canvas>`);
+        this.$canvas = $(`<canvas tabindex = 0></canvas>`);
         this.ctx = this.$canvas[0].getContext('2d');
         this.ctx.canvas.width = this.playground.width;
         this.ctx.canvas.height = this.playground.height;
@@ -207,6 +207,7 @@ class GameMap extends AcGameObject {
     }
 
     start() {
+        this.$canvas.focus();
     }
 
     resize() {
@@ -400,7 +401,7 @@ class Player extends AcGameObject {
             }
         });
 
-        $(window).keydown(function(e) {
+        this.playground.game_map.$canvas.keydown(function(e) {
             if (outer.playground.state !== "fighting")
                 return true;
 
