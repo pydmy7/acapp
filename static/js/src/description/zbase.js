@@ -20,7 +20,7 @@ class AcGameDescription {
         <p>Enter：问候家人</p>
         <p>ECS：关闭聊天框</p>
     </div>
-    <div class="ac-game-description-return">
+    <div class = "ac-game-description-return">
         返回
     </div>
 </div>
