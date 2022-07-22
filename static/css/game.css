@@ -254,7 +254,7 @@
     text-align: center;
     padding: 0;
     width: 100%;
-    height: 100%;
+    height: 73%;
     user-select: none;
     background-size: 100% 100%;
     background-color: rgba(40, 40, 40);
@@ -270,6 +270,25 @@
 .ac-game-description-content {
     margin: 2vh 10vh;
     font-size: 2.5vh;
+}
+
+.ac-game-description-return {
+    margin: 0 auto;
+    color: white;
+    height: 6vh;
+    width: 10vw;
+    font-size: 4vh;
+    font-style: italic;
+    text-align: center;
+    background-color: rgba(39, 21, 28, 0.6);
+    border-radius: 10px;
+    letter-spacing: 0.5vw;
+    cursor: pointer;
+}
+
+.ac-game-description-return:hover {
+    transform: scale(1.2);
+    transition: .2s;
 }
 /* description */
 
