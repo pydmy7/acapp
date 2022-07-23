@@ -7,7 +7,7 @@ class AcGameDescription {
         HR速来！我要找工作！！！
     </div>
     <div class = "ac-game-description-title">
-        背景音乐：星瞳 - Shining You
+        BGM：星瞳 - Shining You
     </div>
     <div class = "ac-game-description-title">
         操作说明
