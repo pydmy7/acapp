@@ -18,7 +18,7 @@ class AcGameDescription {
         <p>Q：发射火球</p>
         <p>F：闪现</p>
         <p>Enter：问候家人</p>
-        <p>ECS：关闭聊天框</p>
+        <p>ESC：关闭聊天框</p>
     </div>
     <div class = "ac-game-description-return">
         返回
