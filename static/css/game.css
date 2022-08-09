@@ -1,20 +1,25 @@
 /* announcement */
 .liu-jia-hui {
+    /*
     width: 30%;
     height: 87%;
     background-image: url("/static/image/announcement/ljh.bmp");
     background-size: 50% 50%;
     user-select: none;
+    */
 }
 
 .ac-game-announcement-return {
-    margin: 0 auto;
+    margin: 26px auto 0;
     color: white;
-    height: 6vh;
-    width: 10vw;
-    font-size: 4vh;
+    width: 156px;
+    height: 38px;
+    font-size: 18px;
+    line-height: 38px;
+    display: block;
     font-style: italic;
     text-align: center;
+    border: 2px solid #fff;
     background-color: rgba(39, 21, 28, 0.6);
     border-radius: 10px;
     letter-spacing: 0.5vw;
