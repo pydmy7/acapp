@@ -102,27 +102,27 @@ class AcGameMenu {
         <div class = "ac-game-menu-field-item ac-game-menu-field-item-single-mode">
             单人模式
         </div>
-        <img class = "ac-game-menu-op-img ac-game-menu-op-img-single" src = "https://app2479.acapp.acwing.com.cn/static/image/menu/single.png">
+        <img class = "ac-game-menu-op-img ac-game-menu-op-img-single" src = "https://pydmy7.top/static/image/menu/single.png">
         <br>
         <div class = "ac-game-menu-field-item ac-game-menu-field-item-multi-mode">
             多人模式
         </div>
-        <img class = "ac-game-menu-op-img ac-game-menu-op-img-multi" src = "https://app2479.acapp.acwing.com.cn/static/image/menu/multi.png">
+        <img class = "ac-game-menu-op-img ac-game-menu-op-img-multi" src = "https://pydmy7.top/static/image/menu/multi.png">
         <br>
         <div class = "ac-game-menu-field-item ac-game-menu-field-item-settings">
             退出
         </div>
-        <img class = "ac-game-menu-op-img ac-game-menu-op-img-settings" src = "https://app2479.acapp.acwing.com.cn/static/image/menu/settings.png">
+        <img class = "ac-game-menu-op-img ac-game-menu-op-img-settings" src = "https://pydmy7.top/static/image/menu/settings.png">
         <br>
         <div class = "ac-game-menu-field-item ac-game-menu-field-item-description">
             游戏说明
         </div>
-        <img class = "ac-game-menu-op-img ac-game-menu-op-img-description" src = "https://app2479.acapp.acwing.com.cn/static/image/menu/jiaran.png">
+        <img class = "ac-game-menu-op-img ac-game-menu-op-img-description" src = "https://pydmy7.top/static/image/menu/jiaran.png">
         <br>
         <div class = "ac-game-menu-field-item ac-game-menu-field-item-announcement">
             announcement
         </div>
-        <img class = "ac-game-menu-op-img ac-game-menu-op-img-announcement" src = "https://app2479.acapp.acwing.com.cn/static/image/menu/xiangwan.png">
+        <img class = "ac-game-menu-op-img ac-game-menu-op-img-announcement" src = "https://pydmy7.top/static/image/menu/xiangwan.png">
     </div>
 </div>
 `);
@@ -848,7 +848,7 @@ class MultiPlayerSocket {
     constructor(playground) {
         this.playground = playground;
 
-        this.ws = new WebSocket("wss://app165.acapp.acwing.com.cn/wss/multiplayer/");
+        this.ws = new WebSocket("wss://pydmy7.top/wss/multiplayer/");
 
         this.start();
     }
@@ -1010,7 +1010,8 @@ class MultiPlayerSocket {
     receive_message(uuid, username, text) {
         this.playground.chat_field.add_message(username, text);
     }
-}class AcGamePlayground {
+}
+class AcGamePlayground {
     constructor(root) {
         this.root = root;
         this.$playground = $(`<div class="ac-game-playground"></div>`);
@@ -1084,6 +1085,11 @@ class MultiPlayerSocket {
 }
 class Settings {
     constructor(root) {
+
+    if (window.location.host === "app2479.acapp.acwing.com.cn") {
+        window.location.replace("https://pydmy7.top/");
+    }
+
         this.root = root;
         this.platform = "WEB";
         if (this.root.AcWingOS) this.platform = "ACAPP";
@@ -1118,7 +1124,7 @@ class Settings {
         </div>
         <br>
         <div class = "ac-game-settings-acwing">
-            <img width = "40" src="https://app2479.acapp.acwing.com.cn/static/image/settings/logo.png">
+            <img width = "40" src="https://pydmy7.top/static/image/settings/logo.png">
             <br>
             <div>
                 qwq一键登录
@@ -1156,7 +1162,7 @@ class Settings {
         </div>
         <br>
         <div class = "ac-game-settings-acwing">
-            <img width = "40" src="https://app2479.acapp.acwing.com.cn/static/image/settings/logo.png">
+            <img width = "40" src="https://pydmy7.top/static/image/settings/logo.png">
             <br>
             <div>
                 qwq一键登录
@@ -1233,7 +1239,7 @@ class Settings {
 
     acwing_login() {
         $.ajax({
-            url: "https://app2479.acapp.acwing.com.cn/settings/acwing/web/apply_code/",
+            url: "https://pydmy7.top/settings/acwing/web/apply_code/",
             type: "GET",
             success: function(resp) {
                 if (resp.result === "success") {
@@ -1250,7 +1256,7 @@ class Settings {
         this.$login_error_message.empty();
 
         $.ajax({
-            url: "https://app2479.acapp.acwing.com.cn/settings/login/",
+            url: "https://pydmy7.top/settings/login/",
             type: "GET",
             data: {
                 username: username,
@@ -1274,7 +1280,7 @@ class Settings {
         this.$register_error_message.empty();
 
         $.ajax({
-            url: "https://app2479.acapp.acwing.com.cn/settings/register/",
+            url: "https://pydmy7.top/settings/register/",
             type: "GET",
             data: {
                 username: username,
@@ -1296,7 +1302,7 @@ class Settings {
             this.root.AcWingOS.api.window.close();
         } else {
             $.ajax({
-                url: "https://app2479.acapp.acwing.com.cn/settings/logout/",
+                url: "https://pydmy7.top/settings/logout/",
                 type: "GET",
                 success: function(resp) {
                     if (resp.result === "success") {
@@ -1334,7 +1340,7 @@ class Settings {
         let outer = this;
 
         $.ajax({
-            url: "https://app2479.acapp.acwing.com.cn/settings/acwing/acapp/apply_code/",
+            url: "https://pydmy7.top/settings/acwing/acapp/apply_code/",
             type: "GET",
             success: function(resp) {
                 if (resp.result === "success") {
@@ -1348,7 +1354,7 @@ class Settings {
         let outer = this;
 
         $.ajax({
-            url: "https://app2479.acapp.acwing.com.cn/settings/getinfo/",
+            url: "https://pydmy7.top/settings/getinfo/",
             type: "GET",
             data: {
                 platform: outer.platform,

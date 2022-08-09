@@ -13,7 +13,7 @@ def get_state():
 
 def apply_code(request):
     appid = "2479"
-    redirect_uri = quote("https://app2479.acapp.acwing.com.cn/settings/acwing/acapp/receive_code/")
+    redirect_uri = quote("https://pydmy7.top/settings/acwing/acapp/receive_code/")
     scope = "userinfo"
     state = get_state()
 

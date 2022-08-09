@@ -25,7 +25,7 @@ def register(request):
     user = User(username = username)
     user.set_password(password)
     user.save()
-    Player.objects.create(user = user, photo = "https://app2479.acapp.acwing.com.cn/static/image/photo/jiaran.png")
+    Player.objects.create(user = user, photo = "https://pydmy7.top/static/image/photo/jiaran.png")
     login(request, user)
     return JsonResponse({
         'result': "success"

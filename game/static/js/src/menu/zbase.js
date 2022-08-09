@@ -7,27 +7,27 @@ class AcGameMenu {
         <div class = "ac-game-menu-field-item ac-game-menu-field-item-single-mode">
             单人模式
         </div>
-        <img class = "ac-game-menu-op-img ac-game-menu-op-img-single" src = "https://app2479.acapp.acwing.com.cn/static/image/menu/single.png">
+        <img class = "ac-game-menu-op-img ac-game-menu-op-img-single" src = "https://pydmy7.top/static/image/menu/single.png">
         <br>
         <div class = "ac-game-menu-field-item ac-game-menu-field-item-multi-mode">
             多人模式
         </div>
-        <img class = "ac-game-menu-op-img ac-game-menu-op-img-multi" src = "https://app2479.acapp.acwing.com.cn/static/image/menu/multi.png">
+        <img class = "ac-game-menu-op-img ac-game-menu-op-img-multi" src = "https://pydmy7.top/static/image/menu/multi.png">
         <br>
         <div class = "ac-game-menu-field-item ac-game-menu-field-item-settings">
             退出
         </div>
-        <img class = "ac-game-menu-op-img ac-game-menu-op-img-settings" src = "https://app2479.acapp.acwing.com.cn/static/image/menu/settings.png">
+        <img class = "ac-game-menu-op-img ac-game-menu-op-img-settings" src = "https://pydmy7.top/static/image/menu/settings.png">
         <br>
         <div class = "ac-game-menu-field-item ac-game-menu-field-item-description">
             游戏说明
         </div>
-        <img class = "ac-game-menu-op-img ac-game-menu-op-img-description" src = "https://app2479.acapp.acwing.com.cn/static/image/menu/jiaran.png">
+        <img class = "ac-game-menu-op-img ac-game-menu-op-img-description" src = "https://pydmy7.top/static/image/menu/jiaran.png">
         <br>
         <div class = "ac-game-menu-field-item ac-game-menu-field-item-announcement">
             announcement
         </div>
-        <img class = "ac-game-menu-op-img ac-game-menu-op-img-announcement" src = "https://app2479.acapp.acwing.com.cn/static/image/menu/xiangwan.png">
+        <img class = "ac-game-menu-op-img ac-game-menu-op-img-announcement" src = "https://pydmy7.top/static/image/menu/xiangwan.png">
     </div>
 </div>
 `);

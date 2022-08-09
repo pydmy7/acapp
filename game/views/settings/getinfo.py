@@ -15,7 +15,7 @@ def getinfo_acapp(request) :
 
 def getinfo_web(request) :
     user = request.user
-    if not user.is_authenticated:
+    if not user.is_authenticated :
         return JsonResponse({
             'result' : "未登录"
         })
