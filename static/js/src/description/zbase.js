@@ -4,10 +4,10 @@ class AcGameDescription {
         this.$description = $(`
 <div class = "ac-game-description">
     <div class = "ac-game-description-title">
-        HR速来！我要找工作！！！
+        HR速来！卑微求工作！！！
     </div>
     <div class = "ac-game-description-title">
-        BGM：星瞳 - Shining You
+        BGM：A-SOUL  -  《超级敏感》
     </div>
     <div class = "ac-game-description-title">
         操作说明

@@ -25,7 +25,12 @@ def register(request):
     user = User(username = username)
     user.set_password(password)
     user.save()
-    Player.objects.create(user = user, photo = "https://pydmy7.top/static/image/photo/jiaran.png")
+    # 彩蛋, asoul 五人随机头像
+    photo_arr = ['jiaran.jpg', 'xiangwan.jpg', 'nailin.jpg', 'beila.jpg', 'jiale.jpg']
+    import random
+    photo_obj = photo_arr[random.randint(0, 4)]
+    #
+    Player.objects.create(user = user, photo = "https://pydmy7.top/static/image/photo/" + photo_obj)
     login(request, user)
     return JsonResponse({
         'result': "success"
