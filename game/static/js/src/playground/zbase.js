@@ -1,7 +1,7 @@
 class AcGamePlayground {
     constructor(root) {
         this.root = root;
-        this.$playground = $(`<div class="ac-game-playground"></div>`);
+        this.$playground = $(`<div class = "ac-game-playground"></div>`);
 
         this.hide();
         this.root.$ac_game.append(this.$playground);
@@ -51,8 +51,11 @@ class AcGamePlayground {
         this.players.push(new Player(this, this.width / 2 / this.scale, 0.5, 0.05, "white", 0.15, "me", this.root.settings.username, this.root.settings.photo));
 
         if (mode === "single mode") {
+            let photo_url = "https://pydmy7.top/static/image/photo/";
+            let photo_names = ["jiaran", "xiangwan", "nailin", "jiale", "beila"]
+
             for (let i = 0; i < 5; i ++ ) {
-                this.players.push(new Player(this, this.width / 2 / this.scale, 0.5, 0.05, this.get_random_color(), 0.15, "robot"));
+                this.players.push(new Player(this, this.width / 2 / this.scale, 0.5, 0.05, this.get_random_color(), 0.15, "robot", photo_names[i], photo_url + photo_names[i] + ".jpg"));
             }
         } else if (mode === "multi mode") {
             this.chat_field = new ChatField(this);

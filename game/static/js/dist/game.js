@@ -326,7 +326,7 @@ class ChatField {
     resize() {
         this.ctx.canvas.width = this.playground.width;
         this.ctx.canvas.height = this.playground.height;
-        this.ctx.fillStyle = "rgba(0, 0, 0, 1)";
+        this.ctx.fillStyle = "rgba(176, 224, 230, 0.8)";
         this.ctx.fillRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
     }
 
@@ -335,7 +335,7 @@ class ChatField {
     }
 
     render() {
-        this.ctx.fillStyle = "rgba(0, 0, 0, 0.2)";
+        this.ctx.fillStyle = "rgba(176, 224, 230, 0.8)";
         this.ctx.fillRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
     }
 }
@@ -435,17 +435,21 @@ class Player extends AcGameObject {
 
         this.cur_skill = null;
 
+        /*
         if (this.character !== "robot") {
             this.img = new Image();
             this.img.src = this.photo;
         }
+        */
+        this.img = new Image();
+        this.img.src = this.photo;
 
         if (this.character === "me") {
-            this.fireball_coldtime = 3;  // 单位：秒
+            this.fireball_coldtime = 3;  // 单位：s
             this.fireball_img = new Image();
             this.fireball_img.src = "https://cdn.acwing.com/media/article/image/2021/12/02/1_9340c86053-fireball.png";
 
-            this.blink_coldtime = 5;  // 单位：秒
+            this.blink_coldtime = 5;  // 单位：s
             this.blink_img = new Image();
             this.blink_img.src = "https://cdn.acwing.com/media/article/image/2021/12/02/1_daccabdc53-blink.png";
         }
@@ -677,6 +681,7 @@ class Player extends AcGameObject {
 
     render() {
         let scale = this.playground.scale;
+        /*
         if (this.character !== "robot") {
             this.ctx.save();
             this.ctx.beginPath();
@@ -691,6 +696,14 @@ class Player extends AcGameObject {
             this.ctx.fillStyle = this.color;
             this.ctx.fill();
         }
+        */
+        this.ctx.save();
+        this.ctx.beginPath();
+        this.ctx.arc(this.x * scale, this.y * scale, this.radius * scale, 0, Math.PI * 2, false);
+        this.ctx.stroke();
+        this.ctx.clip();
+        this.ctx.drawImage(this.img, (this.x - this.radius) * scale, (this.y - this.radius) * scale, this.radius * 2 * scale, this.radius * 2 * scale);
+        this.ctx.restore();
 
         if (this.character === "me" && this.playground.state === "fighting") {
             this.render_skill_coldtime();
@@ -1014,7 +1027,7 @@ class MultiPlayerSocket {
 class AcGamePlayground {
     constructor(root) {
         this.root = root;
-        this.$playground = $(`<div class="ac-game-playground"></div>`);
+        this.$playground = $(`<div class = "ac-game-playground"></div>`);
 
         this.hide();
         this.root.$ac_game.append(this.$playground);
@@ -1064,8 +1077,11 @@ class AcGamePlayground {
         this.players.push(new Player(this, this.width / 2 / this.scale, 0.5, 0.05, "white", 0.15, "me", this.root.settings.username, this.root.settings.photo));
 
         if (mode === "single mode") {
+            let photo_url = "https://pydmy7.top/static/image/photo/";
+            let photo_names = ["jiaran", "xiangwan", "nailin", "jiale", "beila"]
+
             for (let i = 0; i < 5; i ++ ) {
-                this.players.push(new Player(this, this.width / 2 / this.scale, 0.5, 0.05, this.get_random_color(), 0.15, "robot"));
+                this.players.push(new Player(this, this.width / 2 / this.scale, 0.5, 0.05, this.get_random_color(), 0.15, "robot", photo_names[i], photo_url + photo_names[i] + ".jpg"));
             }
         } else if (mode === "multi mode") {
             this.chat_field = new ChatField(this);

@@ -24,17 +24,21 @@ class Player extends AcGameObject {
 
         this.cur_skill = null;
 
+        /*
         if (this.character !== "robot") {
             this.img = new Image();
             this.img.src = this.photo;
         }
+        */
+        this.img = new Image();
+        this.img.src = this.photo;
 
         if (this.character === "me") {
-            this.fireball_coldtime = 3;  // 单位：秒
+            this.fireball_coldtime = 3;  // 单位：s
             this.fireball_img = new Image();
             this.fireball_img.src = "https://cdn.acwing.com/media/article/image/2021/12/02/1_9340c86053-fireball.png";
 
-            this.blink_coldtime = 5;  // 单位：秒
+            this.blink_coldtime = 5;  // 单位：s
             this.blink_img = new Image();
             this.blink_img.src = "https://cdn.acwing.com/media/article/image/2021/12/02/1_daccabdc53-blink.png";
         }
@@ -266,6 +270,7 @@ class Player extends AcGameObject {
 
     render() {
         let scale = this.playground.scale;
+        /*
         if (this.character !== "robot") {
             this.ctx.save();
             this.ctx.beginPath();
@@ -280,6 +285,14 @@ class Player extends AcGameObject {
             this.ctx.fillStyle = this.color;
             this.ctx.fill();
         }
+        */
+        this.ctx.save();
+        this.ctx.beginPath();
+        this.ctx.arc(this.x * scale, this.y * scale, this.radius * scale, 0, Math.PI * 2, false);
+        this.ctx.stroke();
+        this.ctx.clip();
+        this.ctx.drawImage(this.img, (this.x - this.radius) * scale, (this.y - this.radius) * scale, this.radius * 2 * scale, this.radius * 2 * scale);
+        this.ctx.restore();
 
         if (this.character === "me" && this.playground.state === "fighting") {
             this.render_skill_coldtime();
