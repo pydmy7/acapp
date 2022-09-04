@@ -25,8 +25,8 @@ def register(request):
     user = User(username = username)
     user.set_password(password)
     user.save()
-    # 彩蛋, asoul 五人随机头像
-    photo_arr = ['jiaran.jpg', 'xiangwan.jpg', 'nailin.jpg', 'beila.jpg', 'jiale.jpg']
+    # 彩蛋, guichu 五人随机头像
+    photo_arr = ['guichu0.jpg', 'guichu1.jpg', 'guichu2.jpg', 'guichu3.jpg', 'guichu4.jpg']
     import random
     photo_obj = photo_arr[random.randint(0, 4)]
     #
